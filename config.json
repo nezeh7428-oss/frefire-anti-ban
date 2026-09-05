@@ -1,0 +1,114 @@
+{
+  "antiBan": {
+    "enabled": true,
+    "version": "1.0.0",
+    "lastUpdated": "2026-09-05"
+  },
+  "gameplay": {
+    "delayBetweenActions": {
+      "min": 500,
+      "max": 2000,
+      "description": "Random delay in milliseconds between actions"
+    },
+    "killDelay": {
+      "min": 1000,
+      "max": 3000,
+      "description": "Delay before registering kills to avoid bot-like behavior"
+    },
+    "humanLikeAccuracy": {
+      "enabled": true,
+      "missChance": 0.15,
+      "headShotRate": 0.25,
+      "description": "Add human-like accuracy patterns"
+    },
+    "movementPattern": {
+      "enabled": true,
+      "randomStutter": true,
+      "walkVariation": 0.2,
+      "description": "Simulate natural player movement"
+    }
+  },
+  "account": {
+    "loginBehavior": {
+      "randomizeLoginTime": true,
+      "loginDelayHours": {
+        "min": 4,
+        "max": 12
+      },
+      "varyLoginLocation": true,
+      "description": "Vary login times and locations"
+    },
+    "deviceFingerprint": {
+      "randomizeUserAgent": true,
+      "varyResolution": true,
+      "randomizeTimezone": true,
+      "description": "Vary device identifiers"
+    },
+    "activityPattern": {
+      "dailyPlayHours": {
+        "min": 1,
+        "max": 6
+      },
+      "breaksPerSession": {
+        "min": 2,
+        "max": 5
+      },
+      "breakDuration": {
+        "min": 300000,
+        "max": 900000,
+        "description": "Break duration in milliseconds"
+      },
+      "description": "Maintain human-like play patterns"
+    }
+  },
+  "network": {
+    "connectionRotation": {
+      "enabled": true,
+      "rotateEvery": 3600,
+      "description": "Rotate connection every X seconds"
+    },
+    "requestDelays": {
+      "min": 100,
+      "max": 500,
+      "description": "Delay between network requests in milliseconds"
+    },
+    "userAgents": [
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15",
+      "Mozilla/5.0 (Linux; Android 11; SM-G991B) AppleWebKit/537.36"
+    ]
+  },
+  "detection": {
+    "suspiciousActivityThreshold": 0.7,
+    "flaggingPatterns": [
+      "consistent_perfect_accuracy",
+      "inhuman_reaction_time",
+      "unusual_play_hours",
+      "rapid_rank_progression",
+      "suspicious_win_rate",
+      "bot_like_movement"
+    ],
+    "evasionMeasures": {
+      "missOccasionally": true,
+      "takeRandomBreaks": true,
+      "varyPlayStyle": true,
+      "avoidStreaks": true
+    }
+  },
+  "safety": {
+    "reportRisk": false,
+    "suspiciousActivityLog": true,
+    "autoAdjustOnRiskDetection": true,
+    "maxConsecutiveWins": 15,
+    "maxKillsPerMatch": 25,
+    "warningThreshold": 0.5,
+    "description": "Safety limits to avoid triggering anti-cheat"
+  },
+  "monitoring": {
+    "logAllActions": true,
+    "alertOnAnomalies": true,
+    "performanceMetrics": true,
+    "maxActionsPerMinute": 60,
+    "suspiciousActivityAlert": true
+  }
+}
