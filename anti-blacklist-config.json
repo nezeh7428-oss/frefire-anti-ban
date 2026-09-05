@@ -1,0 +1,216 @@
+{
+  "antiBlacklist": {
+    "enabled": true,
+    "version": "1.0.0",
+    "description": "Anti-blacklist configuration to prevent account flagging and maintain clean status"
+  },
+  "accountReputation": {
+    "voidSuspiciousAccounts": true,
+    "minimumAccountAge": {
+      "days": 30,
+      "description": "Wait this many days before intense play"
+    },
+    "accountWarmupPeriod": {
+      "days": 7,
+      "dailyPlayLimit": 2,
+      "description": "Gradual account warmup period"
+    },
+    "trustScore": {
+      "minRequired": 0.8,
+      "factors": [
+        "account_age",
+        "consistent_play_patterns",
+        "no_suspicious_activity",
+        "normal_friends_list",
+        "legitimate_purchase_history"
+      ]
+    }
+  },
+  "behaviorAnalysis": {
+    "progressionRate": {
+      "maxLevelUpsPerDay": 3,
+      "maxRankUpPerDay": 2,
+      "description": "Limit progression to appear natural"
+    },
+    "statisticsNormalization": {
+      "keepWinRateBetween": [0.45, 0.65],
+      "keepKDABetween": [1.5, 3.5],
+      "keepHeadshotRateBelow": 0.35,
+      "varyPerformanceByGameMode": true
+    },
+    "playStyleVariation": {
+      "rotateGameModes": true,
+      "changeWeaponPreferences": true,
+      "varyLandingLocations": true,
+      "playDifferentCharacters": true
+    }
+  },
+  "socialBehavior": {
+    "friendsList": {
+      "addNewFriendsRateLimited": true,
+      "newFriendsPerDay": 5,
+      "acceptFriendRequestsNaturally": true,
+      "maintainFriendInteraction": true
+    },
+    "communication": {
+      "sendChatMessages": true,
+      "chatFrequency": "natural",
+      "avoidSpamming": true,
+      "useRegularLanguage": true,
+      "avoidRobotTalk": true
+    },
+    "guildBehavior": {
+      "joinGuildNaturally": true,
+      "participateInGuildEvents": true,
+      "contributeToGuild": true,
+      "varyActivityLevel": true
+    }
+  },
+  "purchasePattern": {
+    "spendingBehavior": {
+      "realistic": true,
+      "varyPurchases": true,
+      "avoidMassivePurchases": true,
+      "maxDailySpend": 50,
+      "description": "Maximum daily spending in game currency"
+    },
+    "itemSelection": {
+      "buyReasonablyPricedItems": true,
+      "avoidIllegalModifications": true,
+      "purchaseFromOfficialStore": true
+    }
+  },
+  "hardwareFingerprint": {
+    "machineId": {
+      "randomize": true,
+      "rotateDaily": false
+    },
+    "deviceInfo": {
+      "keepConsistent": true,
+      "avoidMultipleDevicesPerDay": true,
+      "rotateDevicesWeekly": true
+    },
+    "gpuRenderer": {
+      "keepConsistent": true
+    },
+    "processorInfo": {
+      "keepConsistent": true
+    }
+  },
+  "ipManagement": {
+    "ipRotation": {
+      "enabled": true,
+      "rotationFrequency": "weekly",
+      "useProxiesWisely": true,
+      "avoidVPN": false,
+      "avoidFreeProxies": true
+    },
+    "geolocation": {
+      "keepConsistent": true,
+      "avoidMultipleCountries": true,
+      "logicalLocationChanges": true
+    },
+    "connectionQuality": {
+      "simulateRealisticPing": true,
+      "pingVariation": true,
+      "avoidPerfectConnectivity": true
+    }
+  },
+  "detectionEvasion": {
+    "antiCheatBypass": {
+      "obfuscateActions": true,
+      "humanizeTiming": true,
+      "varyInputMethods": true
+    },
+    "suspiciousFlags": [
+      "impossible_accuracy",
+      "wallhack_indicators",
+      "aimbotting_patterns",
+      "speedhacking",
+      "teleportation",
+      "instant_headshots",
+      "reaction_time_below_100ms"
+    ],
+    "avoidanceStrategies": {
+      "missRandomShots": true,
+      "missingFrequency": 0.1,
+      "takeNonoptimalShots": true,
+      "useDifferentWeapons": true,
+      "playDifferentRoles": true
+    }
+  },
+  "matchBehavior": {
+    "performanceConsistency": {
+      "varyPerformanceDaily": true,
+      "hasBadGamesOccasionally": true,
+      "badGameFrequency": 0.15,
+      "description": "Have bad games 15% of the time"
+    },
+    "gameEnd": {
+      "avoidRageQuit": true,
+      "playToCompletion": true,
+      "varyPlaytime": true
+    },
+    "teamplay": {
+      "respondToTeamchat": true,
+      "helpTeammates": true,
+      "shareResources": true,
+      "avoidKillstealing": true
+    }
+  },
+  "reportRiskFactors": {
+    "reportThreshold": 0.6,
+    "riskFactors": {
+      "unusualAccuracy": 0.9,
+      "impossibleKills": 1.0,
+      "unusualBehavior": 0.7,
+      "suspiciousFriendsList": 0.5,
+      "bannerWarnings": 0.8
+    },
+    "autoMitigate": true,
+    "mitigation": {
+      "slowDownProgression": true,
+      "increaseRandomErrors": true,
+      "reducePlayIntensity": true,
+      "increaseBreakDuration": true
+    }
+  },
+  "logging": {
+    "trackAllActivity": true,
+    "flagSuspiciousActions": true,
+    "generateReports": true,
+    "alertOnHighRisk": true
+  },
+  "whitelistBypass": {
+    "enableWhitelistMode": false,
+    "trustedDevices": [],
+    "description": "Optional trusted device list for bypassing checks"
+  },
+  "emergencyProtocol": {
+    "lowPlayDays": {
+      "enabled": true,
+      "duration": 3,
+      "maxGamesPerDay": 2,
+      "trigger": "suspicious_activity_detected"
+    },
+    "accountRest": {
+      "enabled": true,
+      "restDaysPerMonth": 5,
+      "randomizeRestDays": true
+    },
+    "immediateActions": [
+      "stop_ranked_games",
+      "reduce_activity",
+      "change_play_style",
+      "clear_cookies",
+      "rotate_ip",
+      "wait_48_hours"
+    ]
+  },
+  "safetyLimits": {
+    "maxGamesPerDay": 20,
+    "maxWinsPerDay": 15,
+    "maxPlaytimePerDay": 480,
+    "description": "Maximum playtime in minutes"
+  }
+}
